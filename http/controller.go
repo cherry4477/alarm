@@ -9,11 +9,25 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/open-falcon/alarm/g"
 	"github.com/toolkits/file"
+	"encoding/json"
 )
+
 
 type MainController struct {
 	beego.Controller
 }
+
+
+func (this *MainController) IndexJson() {
+	events := g.Events.Clone()
+	count := len(events)
+	if count == 0 {
+		this.Ctx.WriteString("")
+	}
+	result,_ := json.Marshal(events)
+	this.Ctx.WriteString(string(result))
+}
+
 
 func (this *MainController) Version() {
 	this.Ctx.WriteString(g.VERSION)
