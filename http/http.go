@@ -16,6 +16,7 @@ func configRoutes() {
 	beego.Router("/workdir", &MainController{}, "get:Workdir")
 	beego.Router("/config/reload", &MainController{}, "get:ConfigReload")
 	beego.Router("/event/solve", &MainController{}, "post:Solve")
+	beego.Router("/alarm", &MainController{}, "get:IndexJson")
 }
 
 func Duration(now, before int64) string {
