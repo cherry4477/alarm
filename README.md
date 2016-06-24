@@ -9,9 +9,9 @@ judge把报警event写入redis，alarm从redis读取event，做相应处理，�
 
 ```bash
 # set $GOPATH and $GOROOT
-mkdir -p $GOPATH/src/github.com/open-falcon
-cd $GOPATH/src/github.com/open-falcon
-git clone https://github.com/open-falcon/alarm.git
+mkdir -p $GOPATH/src/github.com/wfw2046
+cd $GOPATH/src/github.com/wfw2046
+git clone https://github.com/wfw2046/alarm.git
 cd alarm
 go get ./...
 ./control build
